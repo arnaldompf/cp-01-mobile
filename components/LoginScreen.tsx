@@ -13,6 +13,8 @@ import {
   Keyboard
 } from 'react-native';
 
+import { CustomInput } from './CustomInput';
+
 interface LoginScreenProps {
   onLogin: () => void;
 }
@@ -40,27 +42,21 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
           </View>
           
           <View style={styles.formContainer}>
-            <Text style={styles.label}>RM ou E-mail</Text>
-            <TextInput
-              style={styles.input}
+            <CustomInput
+              label="RM ou E-mail"
               placeholder="Digite seu RM..."
-              placeholderTextColor="#999"
               value={email}
               onChangeText={setEmail}
               keyboardType="email-address"
               autoCapitalize="none"
-              cursorColor="#ED145B"
             />
             
-            <Text style={styles.label}>Senha</Text>
-            <TextInput
-              style={styles.input}
+            <CustomInput
+              label="Senha"
               placeholder="Digite sua senha..."
-              placeholderTextColor="#999"
               value={password}
               onChangeText={setPassword}
               secureTextEntry
-              cursorColor="#ED145B"
             />
             
             <View style={styles.switchContainer}>
@@ -114,23 +110,6 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     width: '100%',
-  },
-  label: {
-    color: '#ED145B',
-    fontSize: 14,
-    fontWeight: '600',
-    marginBottom: 8,
-    marginLeft: 4,
-  },
-  input: {
-    backgroundColor: '#1a1a1a',
-    borderRadius: 10,
-    padding: 15,
-    fontSize: 16,
-    color: '#fff',
-    borderWidth: 1,
-    borderColor: '#333',
-    marginBottom: 20,
   },
   switchContainer: {
     flexDirection: 'row',
