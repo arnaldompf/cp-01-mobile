@@ -14,6 +14,7 @@ import {
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { morningSchedule, nightSchedule, ScheduleItem as ScheduleItemType } from './mocks/scheduleData';
 import { ScheduleItem } from './components/ScheduleItem';
+import { LoginScreen } from './components/LoginScreen';
 
 function MainContent() {
     const insets = useSafeAreaInsets();
@@ -93,9 +94,15 @@ function MainContent() {
 }
 
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <SafeAreaProvider>
-      <MainContent />
+      {isLoggedIn ? (
+        <MainContent />
+      ) : (
+        <LoginScreen onLogin={() => setIsLoggedIn(true)} />
+      )}
     </SafeAreaProvider>
   );
 }
