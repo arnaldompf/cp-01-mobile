@@ -40,7 +40,7 @@ O aplicativo pode ser executado facilmente no ambiente de desenvolvimento local 
    ```
 4. Para visualizar o projeto, você pode usar seu smartphone escaneando o QR Code exibido no terminal utilizando o aplicativo **Expo Go**, ou abrindo o projeto no simulador configurado.
 
-![Print Do App](print-app.png)
+![Print Do App](print.png)
 
 ## Integrantes 
 
